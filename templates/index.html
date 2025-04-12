@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Mate - 聊天搭子</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+</head>
+<body>
+    <!-- 侧边栏 -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-title">历史对话</div>
+            <button class="close-sidebar" id="close-sidebar">&times;</button>
+        </div>
+        <div class="history-list" id="history-list">
+            <!-- 历史对话将通过JavaScript动态添加 -->
+        </div>
+        <div class="sidebar-footer">
+            <button class="new-chat-btn" id="new-chat-btn">开始新对话</button>
+            <!-- <button class="settings-btn" id="settings-btn">设置</button> -->
+        </div>
+    </div>
+
+    <!-- 设置弹窗 -->
+    <div class="settings-modal" id="settings-modal">
+        <div class="settings-content">
+            <div class="settings-header">
+                <h3 class="settings-title">API 设置</h3>
+                <button class="close-settings" id="close-settings">&times;</button>
+            </div>
+            <form class="settings-form" id="settings-form">
+                <div class="form-group">
+                    <label for="api-url" class="form-label">API 地址</label>
+                    <input type="text" id="api-url" class="form-input" placeholder="https://api.example.com/v1">
+                </div>
+                <div class="form-group">
+                    <label for="api-key" class="form-label">API 密钥</label>
+                    <input type="password" id="api-key" class="form-input" placeholder="输入您的API密钥">
+                </div>
+                <div class="form-group">
+                    <label for="model-name" class="form-label">模型名称</label>
+                    <input type="text" id="model-name" class="form-input" placeholder="Qwen/QwQ-32B">
+                </div>
+            </form>
+            <div class="settings-footer">
+                <button type="button" class="btn btn-secondary" id="clear-settings">清除</button>
+                <button type="button" class="btn btn-primary" id="save-settings">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 侧边栏遮罩 -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- 主内容区域 -->
+    <div class="main-content" id="main-content">
+        <!-- <header>
+            <button class="menu-btn" id="menu-btn">☰</button>
+            <div class="header-content"> -->
+                <!-- <h1>Soul Chat</h1> -->
+                <!-- <p class="subtitle">心灵对话空间 - 倾听你的心声</p>
+            </div> -->
+            <!-- 占位保持对称 -->
+            <!-- <div style="width: 40px;"></div>
+        </header> -->
+
+        <button class="menu-btn" id="settings-btn">
+            <img src="../static/logo/a-more2.svg" alt="更多" width="24" height="24">
+        </button>
+        <button class="menu-btn" id="menu-btn" style="top: 80px;">
+            <img src="../static/logo/lishijilu.svg" alt="历史记录" width="24" height="24">
+        </button>
+        <button class="menu-btn" id="clear-history-btn" style="top: 140px;">
+            <img src="../static/logo/shuaxin.svg" alt="刷新" width="24" height="24">
+        </button>
+
+        <main>
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="status"></div>
+                    <span>Chat Mate - 你的在线聊天伙伴</span>
+                </div>
+
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message-container bot">
+                        <div class="avatar bot-avatar">AI</div>
+                        <div class="message bot-message">
+                            你好！我是你的聊天搭子。你可以跟我说说你的感受和想法，我会认真倾听并给予温暖的回应。今天有什么想分享的吗？
+                            <div class="message-time">刚刚</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+
+                <div class="input-area">
+                    <textarea class="message-input" id="message-input" placeholder="向 AI 发送消息 嗖嗖~咻~" rows="1"></textarea>
+                    <button class="send-button" id="send-button">
+                        <svg class="send-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- <footer>
+            &copy; 2023 Soul Chat - 用心倾听每一个声音
+        </footer> -->
+    </div>
+    <script src="../static/scripts.js"></script>
+</body>
+</html>

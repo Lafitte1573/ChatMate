@@ -1,0 +1,69 @@
+ * Serving Flask app 'openai_server'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.199.189:8000
+[33mPress CTRL+C to quit[127127.0.0.1 - - [12/Apr/2025 13:43:51] "OPTIONS /stream_openai_generate HTTP/1.1" 200 -
+{'messages': [{'text': '你好！我是你的聊天搭子。你可以跟我说说你的感受和想法，我会认真倾听并给予温暖的回应。今天有什么想分享的吗？', 'sender': 'bot', 'time': '2025-04-12T05:43:27.878Z'}, {'text': '能讲讲你的故事吗？', 'sender': 'user', 'time': '2025-04-12T05:43:51.463Z'}], 'base_url': 'https://api-inference.modelscope.cn/v1/', 'api_key': 'e7e2fe8e-fc42-43f7-b72d-787f71e8353f', 'model': '', 'newMessage': '能讲讲你的故事吗？'}
+[{'role': 'user', 'content': '能讲讲你的故事吗？'}]
+127.0.0.1 - - [12/Apr/2025 13:43:51] "[35m[1mPOST /stream_openai_generate HTTP/1.1[0m" 500 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 56111)
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/werkzeug/serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/werkzeug/serving.py", line 333, in execute
+    for data in application_iter:
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/werkzeug/wsgi.py", line 256, in __next__
+    return self._next()
+           ^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/werkzeug/wrappers/response.py", line 32, in _iter_encoded
+    for item in iterable:
+  File "/Users/djx/PycharmLocal/ChatMate/openai_server.py", line 25, in generate_stream_response_by_openai
+    response = client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/openai/_utils/_utils.py", line 279, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 914, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/openai/_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/openai/_base_client.py", line 919, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/openai/_base_client.py", line 1023, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'errors': {'message': 'Invalid model id: '}, 'request_id': 'fabb77ab-3952-447e-be3b-26272b324203'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/socketserver.py", line 691, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/socketserver.py", line 361, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/socketserver.py", line 755, in __init__
+    self.handle()
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/werkzeug/serving.py", line 398, in handle
+    super().handle()
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/http/server.py", line 436, in handle
+    self.handle_one_request()
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/http/server.py", line 424, in handle_one_request
+    method()
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/werkzeug/serving.py", line 390, in run_wsgi
+    from .debug.tbtools import DebugTraceback
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/werkzeug/debug/__init__.py", line 30, in <module>
+    from .console import Console
+  File "/opt/anaconda3/envs/pylocal/lib/python3.11/site-packages/werkzeug/debug/console.py", line 132, in <module>
+    class _InteractiveConsole(code.InteractiveInterpreter):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'code' has no attribute 'InteractiveInterpreter'
+----------------------------------------
+127.0.0.1 - - [12/Apr/2025 13:43:59] "OPTIONS /stream_openai_generate HTTP/1.1" 200 -
+{'messages': [{'text': '你好！我是你的聊天搭子。你可以跟我说说你的感受和想法，我会认真倾听并给予温暖的回应。今天有什么想分享的吗？', 'sender': 'bot', 'time': '2025-04-12T05:43:27.878Z'}, {'text': '能讲讲你的故事吗？', 'sender': 'user', 'time': '2025-04-12T05:43:51.463Z'}, {'text': '能讲讲你的故事吗？', 'sender': 'user', 'time': '2025-04-12T05:43:59.665Z'}], 'base_url': 'https://api-inference.modelscope.cn/v1/', 'api_key': 'e7e2fe8e-fc42-43f7-b72d-787f71e8353f', 'model': 'Qwen/QwQ-32B', 'newMessage': '能讲讲你的故事吗？'}
+[{'role': 'user', 'content': '能讲讲你的故事吗？'}, {'role': 'user', 'content': '能讲讲你的故事吗？'}]
+127.0.0.1 - - [12/Apr/2025 13:44:00] "POST /stream_openai_generate HTTP/1.1" 200 -
