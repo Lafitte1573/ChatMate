@@ -1,6 +1,7 @@
 ## ChatMate: A Simple Online Chat Partner for Everyone
 
-<video src="./media/demo.mp4" controls width="80%"></video>
+<iframe width="80%" src="https://youtu.be/HHDmjWH1UFM" frameborder="0" allowfullscreen></iframe>
+       
 
 ### 主要特征
 - **低代码量**：前后端总计代码量仅为 1000 行左右，便于快速学习和修改。
