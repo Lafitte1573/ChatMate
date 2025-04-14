@@ -1,5 +1,7 @@
 ## ChatMate: A Simple Online Chat Partner for Everyone
 
+[视频链接](./media/demo.mp4)
+
 <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
   <iframe 
     src="//https://youtu.be/HHDmjWH1UFM" 
