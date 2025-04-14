@@ -1,6 +1,8 @@
 ## ChatMate: A Simple Online Chat Partner for Everyone
 
-<iframe width="80%" src="https://youtu.be/HHDmjWH1UFM" frameborder="0" allowfullscreen></iframe>
+<video src="https://youtu.be/HHDmjWH1UFM" controls width="80%"></video>
+       
+[//]: # (<iframe width="80%" src="https://youtu.be/HHDmjWH1UFM" frameborder="0" allowfullscreen></iframe>)
        
 
 ### 主要特征
