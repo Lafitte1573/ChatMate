@@ -320,7 +320,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     }
 
-    // ... 原有代码保持不变 ...
     async function generateResponse(userMessage) {
         const currentConversation = conversations.find(c => c.id === currentConversationId);
         if (!currentConversation) return "系统错误：找不到当前对话";

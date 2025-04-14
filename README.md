@@ -1,5 +1,7 @@
 ## ChatMate: A Simple Online Chat Partner for Everyone
 
+<video src="/media/demo.mp4" controls width="80%"></video>
+
 ### 主要特征
 - **低代码量**：前后端总计代码量仅为 1000 行左右，便于快速学习和修改。
 - **低抽象性**：采用前后端分离的构建方式。前端使用原生的 HTML、CSS 和 JavaScript 实现，没有使用任何框架或库，后端主要使用 Flask 编写。
@@ -8,8 +10,12 @@
 - **极简设计**：小而美的 UI 界面简单美观，轻松使用和学习。
 
 ### 运行环境
+#### 下载项目
+```shell
+git clone https://github.com/Lafitte1573/ChatMate.git
+```
 #### 安装依赖
-```bash
+```shell
 // 新建虚拟环境
 conda create -n chatmate python=3.10
 
@@ -27,7 +33,7 @@ cd ChatMate
 ```
 
 #### 启动与终止
-```bash
+```shell
 // 启动服务
 python run.py
 
